@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: sitharosrey-flask-test
-          image: kshrdautopilot/sitharosrey-flask-test
+          image: kshrdautopilot/sitharosrey-flask-test:2023-12-01-03-06-49
           ports:
             - containerPort: 5000
