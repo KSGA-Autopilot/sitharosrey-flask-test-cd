@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sitharosrey-flask-test-ingress
+  namespace: sitharosrey
+spec:
+  tls:
+    - hosts:
+        - who.auto-pilot.dev
+      secretName: tls-cert
+  rules:
+    - host: who.auto-pilot.dev
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: sitharosrey-flask-test-svc
+                port:
+                  number: 5000
