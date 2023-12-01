@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sitharosrey-flask-test-deployment
+  labels:
+    app: sitharosrey-flask-test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sitharosrey-flask-test
+  template:
+    metadata:
+      labels:
+        app: sitharosrey-flask-test
+    spec:
+      containers:
+        - name: sitharosrey-flask-test
+          image: kshrdautopilot/sitharosrey-flask-test
+          ports:
+            - containerPort: 5000
